@@ -161,9 +161,10 @@ module.exports = {
     ...(env === 'production' ? [
       // Production only plugins
       new OptimizeCSSPlugin({
-        cssProcessorOptions: {
-          safe: true,
-          map: { inline: false },
+        minimizerOptions: {
+          preset: [
+            'default',
+          ],
         },
       }),
       new webpack.optimize.ModuleConcatenationPlugin(),

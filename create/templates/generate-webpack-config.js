@@ -256,9 +256,10 @@ module.exports = (options) => {
         `)}
         ...(env === 'production' ? [
           new OptimizeCSSPlugin({
-            cssProcessorOptions: {
-              safe: true,
-              map: { inline: false },
+            minimizerOptions: {
+              preset: [
+                'default',
+              ],
             },
           }),
         ] : [
